@@ -14,4 +14,7 @@ public interface UserMapper {
     void updateUser(@MappingTarget User user, UserUpdateRequest request);
 
     UserResponse toUserResponse(User user);
+    default String mapRoleToString(com.xeng.identity_service.entity.Role role) {
+        return role == null ? null : role.getName();
+    }
 }
